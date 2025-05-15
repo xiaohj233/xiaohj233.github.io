@@ -841,20 +841,46 @@ const anzhiyu = {
   },
   // 获取自定义播放列表
   getCustomPlayList: function () {
-    if (!window.location.pathname.startsWith("/music/")) {
-      return;
-    }
+    if (!window.location.pathname.startsWith("/music/")) return;
+  
     const urlParams = new URLSearchParams(window.location.search);
-    const userId = "8152976493";
-    const userServer = "netease";
     const anMusicPageMeting = document.getElementById("anMusic-page-meting");
-    if (urlParams.get("id") && urlParams.get("server")) {
-      const id = urlParams.get("id");
-      const server = urlParams.get("server");
-      anMusicPageMeting.innerHTML = `<meting-js id="${id}" server=${server} type="playlist" type="playlist" mutex="true" preload="auto" theme="var(--anzhiyu-main)" order="list" list-max-height="calc(100vh - 169px)!important"></meting-js>`;
+  
+    // 如果传入了 source=meting，则加载 MetingJS 歌单
+    if (urlParams.get("source") === "meting") {
+      const id = urlParams.get("id") || "8152976493";
+      const server = urlParams.get("server") || "netease";
+  
+      anMusicPageMeting.innerHTML = `
+        <meting-js id="${id}" server="${server}" type="playlist"
+                    mutex="true" preload="auto" 
+                    theme="var(--anzhiyu-main)" order="list"
+                    list-max-height="calc(100vh - 169px)!important">
+        </meting-js>
+      `;
     } else {
-      anMusicPageMeting.innerHTML = `<meting-js id="${userId}" server="${userServer}" type="playlist" mutex="true" preload="auto" theme="var(--anzhiyu-main)" order="list" list-max-height="calc(100vh - 169px)!important"></meting-js>`;
+      // 否则默认加载本地 music.json
+      fetch("/json/music.json")
+        .then(res => res.json())
+        .then(songs => {
+          const ap = new APlayer({
+            container: anMusicPageMeting,
+            listFolded: true,
+            audio: songs
+          });
+  
+          window.anzhiyu.aplayerInstance = ap;
+  
+          // 监听播放器加载完成事件
+          ap.on("loadeddata", () => {
+            anzhiyu.changeMusicBg();
+          });
+        })
+        .catch(err => {
+          console.error("加载 music.json 失败", err);
+        });
     }
+  
     anzhiyu.changeMusicBg(false);
   },
   //隐藏今日推荐
@@ -966,32 +992,33 @@ const anzhiyu = {
     const metingAplayer = anMusicPage.querySelector("meting-js").aplayer;
     const currentTime = new Date().getTime();
     const cacheData = JSON.parse(localStorage.getItem("musicData")) || { timestamp: 0 };
+  
     let songs = [];
-
-    if (changeMusicListFlag) {
-      songs = defaultPlayMusicList;
-    } else {
-      // 保存当前默认播放列表，以使下次可以切换回来
-      defaultPlayMusicList = metingAplayer.list.audios;
-      // 如果缓存的数据没有过期，直接使用
-      if (currentTime - cacheData.timestamp < 24 * 60 * 60 * 1000) {
+  
+    // 默认加载本地歌单
+    if (!changeMusicListFlag) {
+      // 如果缓存存在且未过期，直接使用缓存
+      if (cacheData.songs && currentTime - cacheData.timestamp < 24 * 60 * 60 * 1000) {
         songs = cacheData.songs;
       } else {
-        // 否则重新从服务器获取数据
+        // 否则重新从服务器获取
         const response = await fetch("/json/music.json");
         songs = await response.json();
         cacheData.timestamp = currentTime;
         cacheData.songs = songs;
         localStorage.setItem("musicData", JSON.stringify(cacheData));
       }
+    } else {
+      // 如果切换回远程歌单，则恢复默认的 MetingJS 歌单
+      songs = defaultPlayMusicList;
     }
-
-    // 清除当前播放列表并添加新的歌曲
+  
+    // 切换标志位：下次点击按钮时切换回去
+    changeMusicListFlag = !changeMusicListFlag;
+  
+    // 清空现有播放列表并添加新歌单
     metingAplayer.list.clear();
     metingAplayer.list.add(songs);
-
-    // 切换标志位
-    changeMusicListFlag = !changeMusicListFlag;
   },
   // 控制台音乐列表监听
   addEventListenerConsoleMusicList: function () {
