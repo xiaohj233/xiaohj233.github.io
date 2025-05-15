@@ -845,8 +845,8 @@ const anzhiyu = {
       return;
     }
     const urlParams = new URLSearchParams(window.location.search);
-    const userId = "39336101";         // 替换为你目标歌单的用户 ID
-    const userServer = "netease";        // 平台保持为 netease
+    const userId = "13715772498";         // 替换为你目标歌单的新 ID
+    const userServer = "netease";           // 平台保持为 netease
     const anMusicPageMeting = document.getElementById("anMusic-page-meting");
   
     if (urlParams.get("id") && urlParams.get("server")) {
