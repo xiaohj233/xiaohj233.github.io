@@ -992,33 +992,32 @@ const anzhiyu = {
     const metingAplayer = anMusicPage.querySelector("meting-js").aplayer;
     const currentTime = new Date().getTime();
     const cacheData = JSON.parse(localStorage.getItem("musicData")) || { timestamp: 0 };
-  
     let songs = [];
-  
-    // 默认加载本地歌单
-    if (!changeMusicListFlag) {
-      // 如果缓存存在且未过期，直接使用缓存
-      if (cacheData.songs && currentTime - cacheData.timestamp < 24 * 60 * 60 * 1000) {
+
+    if (changeMusicListFlag) {
+      songs = defaultPlayMusicList;
+    } else {
+      // 保存当前默认播放列表，以使下次可以切换回来
+      defaultPlayMusicList = metingAplayer.list.audios;
+      // 如果缓存的数据没有过期，直接使用
+      if (currentTime - cacheData.timestamp < 24 * 60 * 60 * 1000) {
         songs = cacheData.songs;
       } else {
-        // 否则重新从服务器获取
+        // 否则重新从服务器获取数据
         const response = await fetch("/json/music.json");
         songs = await response.json();
         cacheData.timestamp = currentTime;
         cacheData.songs = songs;
         localStorage.setItem("musicData", JSON.stringify(cacheData));
       }
-    } else {
-      // 如果切换回远程歌单，则恢复默认的 MetingJS 歌单
-      songs = defaultPlayMusicList;
     }
-  
-    // 切换标志位：下次点击按钮时切换回去
-    changeMusicListFlag = !changeMusicListFlag;
-  
-    // 清空现有播放列表并添加新歌单
+
+    // 清除当前播放列表并添加新的歌曲
     metingAplayer.list.clear();
     metingAplayer.list.add(songs);
+
+    // 切换标志位
+    changeMusicListFlag = !changeMusicListFlag;
   },
   // 控制台音乐列表监听
   addEventListenerConsoleMusicList: function () {
