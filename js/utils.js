@@ -841,46 +841,20 @@ const anzhiyu = {
   },
   // 获取自定义播放列表
   getCustomPlayList: function () {
-    if (!window.location.pathname.startsWith("/music/")) return;
-  
-    const urlParams = new URLSearchParams(window.location.search);
-    const anMusicPageMeting = document.getElementById("anMusic-page-meting");
-  
-    // 如果传入了 source=meting，则加载 MetingJS 歌单
-    if (urlParams.get("source") === "meting") {
-      const id = urlParams.get("id") || "8152976493";
-      const server = urlParams.get("server") || "netease";
-  
-      anMusicPageMeting.innerHTML = `
-        <meting-js id="${id}" server="${server}" type="playlist"
-                    mutex="true" preload="auto" 
-                    theme="var(--anzhiyu-main)" order="list"
-                    list-max-height="calc(100vh - 169px)!important">
-        </meting-js>
-      `;
-    } else {
-      // 否则默认加载本地 music.json
-      fetch("/json/music.json")
-        .then(res => res.json())
-        .then(songs => {
-          const ap = new APlayer({
-            container: anMusicPageMeting,
-            listFolded: true,
-            audio: songs
-          });
-  
-          window.anzhiyu.aplayerInstance = ap;
-  
-          // 监听播放器加载完成事件
-          ap.on("loadeddata", () => {
-            anzhiyu.changeMusicBg();
-          });
-        })
-        .catch(err => {
-          console.error("加载 music.json 失败", err);
-        });
+    if (!window.location.pathname.startsWith("/music/")) {
+      return;
     }
-  
+    const urlParams = new URLSearchParams(window.location.search);
+    const userId = "8152976493";
+    const userServer = "netease";
+    const anMusicPageMeting = document.getElementById("anMusic-page-meting");
+    if (urlParams.get("id") && urlParams.get("server")) {
+      const id = urlParams.get("id");
+      const server = urlParams.get("server");
+      anMusicPageMeting.innerHTML = `<meting-js id="${id}" server=${server} type="playlist" type="playlist" mutex="true" preload="auto" theme="var(--anzhiyu-main)" order="list" list-max-height="calc(100vh - 169px)!important"></meting-js>`;
+    } else {
+      anMusicPageMeting.innerHTML = `<meting-js id="${userId}" server="${userServer}" type="playlist" mutex="true" preload="auto" theme="var(--anzhiyu-main)" order="list" list-max-height="calc(100vh - 169px)!important"></meting-js>`;
+    }
     anzhiyu.changeMusicBg(false);
   },
   //隐藏今日推荐
