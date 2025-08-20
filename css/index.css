@@ -13048,8 +13048,32 @@ h1.page-title + .tag-cloud-list {
   font-size: 0.78em;
   cursor: pointer;
 }
+#nav .site-page svg {
+  fill: currentColor;
+  color: inherit;
+  -webkit-transition: color 0.3s ease;
+  -moz-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  -ms-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  width: 1em;
+  height: 1em;
+}
+#nav .site-page img {
+  width: 1em;
+  height: 1em;
+  -webkit-transition: opacity 0.3s ease;
+  -moz-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  -ms-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
 #nav .site-page:hover {
   color: var(--anzhiyu-white) !important;
+}
+#nav .site-page:hover svg {
+  fill: currentColor;
+  color: inherit;
 }
 .main-hero-waves-area {
   width: 100%;
@@ -13254,6 +13278,70 @@ h1.page-title + .tag-cloud-list {
 @media screen and (max-width: 768px) {
   .layout > div:first-child:not(.recent-posts) {
     z-index: 10;
+  }
+  .site-page img:not(.compass-svg-icon) {
+    filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%) !important;
+    -webkit-transition: filter 0.3s ease;
+    -moz-transition: filter 0.3s ease;
+    -o-transition: filter 0.3s ease;
+    -ms-transition: filter 0.3s ease;
+    transition: filter 0.3s ease;
+  }
+  [data-theme="dark"] .site-page img:not(.compass-svg-icon) {
+    filter: brightness(0) saturate(100%) invert(84%) sepia(8%) saturate(555%) hue-rotate(201deg) brightness(95%) contrast(93%) !important;
+  }
+  .site-page svg.compass-svg-icon {
+    fill: currentColor !important;
+    color: inherit !important;
+    filter: none !important;
+    -webkit-transition: color 0.3s ease;
+    -moz-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    -ms-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+  }
+  .site-page svg.compass-svg-icon rect {
+    fill: currentColor !important;
+  }
+  [data-theme="dark"] .site-page svg.compass-svg-icon {
+    fill: currentColor !important;
+    color: inherit !important;
+  }
+  .site-page:hover img:not(.compass-svg-icon) {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%) !important;
+  }
+  .site-page:hover svg.compass-svg-icon {
+    fill: currentColor !important;
+    color: inherit !important;
+  }
+}
+@media screen and (max-width: 768px) and (orientation: portrait) {
+  .site-page svg.compass-svg-icon {
+    fill: currentColor !important;
+    color: inherit !important;
+    filter: none !important;
+  }
+  .site-page svg.compass-svg-icon rect {
+    fill: currentColor !important;
+  }
+  [data-theme="dark"] .site-page svg.compass-svg-icon {
+    fill: currentColor !important;
+    color: inherit !important;
+  }
+}
+@media screen and (max-width: 480px) {
+  .menus_items .site-page svg.compass-svg-icon {
+    fill: currentColor !important;
+    color: inherit !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+  }
+  .menus_items .site-page svg.compass-svg-icon rect {
+    fill: currentColor !important;
+  }
+  [data-theme="dark"] .menus_items .site-page svg.compass-svg-icon {
+    fill: currentColor !important;
+    color: inherit !important;
   }
   .post-bg:has(.bldbanner) #post-info:after,
   .post-bg:has(.bili-banner) #post-info:after,
@@ -17682,6 +17770,42 @@ mjx-container[display],
 }
 .snackbar-css {
   border-radius: 5px !important;
+}
+@font-face {
+  font-family: 'xiaohj-icon';
+  src: url("../fonts/xiaohj-icon.eot?t=1735608558");
+  src: url("../fonts/xiaohj-icon.eot?t=1735608558#iefix") format('embedded-opentype'), url("../fonts/xiaohj-icon.ttf?t=1735608558") format('truetype'), url("../fonts/xiaohj-icon.woff?t=1735608558") format('woff'), url("../fonts/xiaohj-icon.svg?t=1735608558#xiaohj-icon") format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+.xiaohj-icon {
+  font-family: "xiaohj-icon" !important;
+  font-size: 0.9em !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: baseline;
+}
+.xiaohj-icon-compass:before {
+  content: "\e900";
+}
+.menus_items .menus_item .site-page .xiaohj-icon-compass {
+  font-size: 0.9em !important;
+  max-height: 20px;
+  width: 15%;
+  text-align: left;
+  vertical-align: baseline;
+  color: currentColor;
+maxWidth480()
+}
+.menus_items .menus_item .site-page .xiaohj-icon-compass:hover {
+  color: currentColor;
+}
+@media screen and (max-width: 768px) {
+  .menus_items .menus_item .site-page .xiaohj-icon-compass {
+    font-size: 0.9em !important;
+  }
 }
 .bilibili_box {
   display: -webkit-box;
