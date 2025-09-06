@@ -1,0 +1,31 @@
+/*
+ * 方案三：实现慢速“呼吸式”淡入淡出（完全透明）
+ */
+
+/* 1. 告诉 .loading-img 使用我们自定义的新动画 */
+.loading-img {
+    /* 
+   * 使用 animation 属性来覆盖所有动画设置。
+   * loadingActionCustom: 这是我们新动画的名字。
+   * 2.5s: 动画单次循环的时长，数值越大越慢。
+   * infinite: 无限循环播放。
+   * alternate: 动画会反向播放（从透明变回不透明），形成呼吸效果。
+   */
+    animation: loadingActionCustom 1s infinite alternate !important;
+}
+
+/* 2. 定义我们新动画的具体效果 */
+@keyframes loadingActionCustom {
+
+    /* 动画开始时 */
+    from {
+        opacity: 1;
+        /* 完全不透明 */
+    }
+
+    /* 动画结束时 */
+    to {
+        opacity: 0.4;
+        /* 完全透明 */
+    }
+}
