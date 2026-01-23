@@ -1,0 +1,760 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>kail Live 使用Wifite实战教程 | 233-909!</title><meta name="keywords" content="博客"><meta name="author" content="晓嘿君"><meta name="copyright" content="晓嘿君"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="kail Live 使用Wifite实战教程"><meta name="application-name" content="kail Live 使用Wifite实战教程"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="kail Live 使用Wifite实战教程"><meta property="og:url" content="http://www.233909.xyz/posts/37442df9/index.html"><meta property="og:site_name" content="233-909!"><meta property="og:description" content="Kali Live U 盘版 Wifite 实战教程 (AX210)前言： 你现在是直接用 U 盘启动的系统（关于如何制作启动盘请看上一篇）。这意味着 Kali 直接控制你的笔记本硬件。Intel AX210 网卡性能极强，支持最新的监听模式和注入，是绝佳的测试工具。没有 AX210 也可以手动查阅"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://bu.dusays.com/2025/09/05/68ba5cf5568da.png"><meta property="article:author" content="晓嘿君"><meta property="article:tag" content="[&quot;博客&quot;]"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://bu.dusays.com/2025/09/05/68ba5cf5568da.png"><meta name="description" content="Kali Live U 盘版 Wifite 实战教程 (AX210)前言： 你现在是直接用 U 盘启动的系统（关于如何制作启动盘请看上一篇）。这意味着 Kali 直接控制你的笔记本硬件。Intel AX210 网卡性能极强，支持最新的监听模式和注入，是绝佳的测试工具。没有 AX210 也可以手动查阅"><link rel="shortcut icon" href="/img/xiao.svg"><link rel="canonical" href="http://www.233909.xyz/posts/37442df9/"><link rel="preconnect" href="//cdn.cbd.int"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="codeva-oRgZAaBiqa"/><meta name="msvalidate.01" content="14F71ECBE69879A3EF46FD53914335DD"/><link rel="manifest" href="/manifest.json"/><meta name="msapplication-TileColor" content="var(--anzhiyu-main)"/><link rel="mask-icon" href="/img/xiao.svg" color="#5bbad5"/><link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png"/><link rel="apple-touch-icon-precomposed" sizes="180x180" href="/img/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.ico"/><link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.ico"/><link rel="bookmark" href="/img/pwa-512x512.png"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2048-2732.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2732-2048.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1668-2388.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2388-1668.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1536-2048.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2048-1536.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1668-2224.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2224-1668.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1620-2160.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2160-1620.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1290-2796.jpg" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2796-1290.jpg" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1179-2556.jpg" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2556-1179.jpg" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1284-2778.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2778-1284.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1170-2532.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2532-1170.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1125-2436.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2436-1125.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1242-2688.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2688-1242.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-828-1792.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1792-828.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1242-2208.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2208-1242.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-750-1334.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1334-750.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://bu.dusays.com/2023/03/03/6401a7904ff3a.png"},
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: undefined,
+  LA51: undefined,
+  greetingBox: {"enable":true,"default":"夜猫子收工！马克思说睡眠也是生产力🌙","list":[{"greeting":"凌晨的灯光属于唯物主义者！但健康第一🌌","startTime":0,"endTime":5},{"greeting":"早啊达瓦里氏！以饱满的姿态应对生活吧！","startTime":6,"endTime":9},{"greeting":"达瓦里氏你就像10点钟太阳一样耀眼☀️","startTime":10,"endTime":10},{"greeting":"恩格斯说食物是劳动力的第一再生产🍞","startTime":11,"endTime":11},{"greeting":"午间辩证法：午睡30分钟≈下午续航2小时⚡","startTime":12,"endTime":14},{"greeting":"下午活力补给！偷偷塞你颗糖🍬","startTime":14,"endTime":18},{"greeting":"达瓦里氏多吃点，今天辛苦啦！🍛","startTime":19,"endTime":19},{"greeting":"晚上放松时间，做点让自己开心的事吧～🎧","startTime":20,"endTime":24}]},
+  twikooEnvId: 'https://www.review.233909.xyz/',
+  commentBarrageConfig:{"enable":true,"maxBarrage":1,"barrageTime":4000,"accessToken":"7a8e9884f15187534ec5e1f61ed201a6","mailMd5":"2162a1dd755f0bd201b072841ece1e11"},
+  music_page_default: "custom",
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["❤️ 不忘初心，牢记使命"]},
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: 晓嘿君","link":"链接: ","source":"来源: 233-909!","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '233-909!',
+  title: 'kail Live 使用Wifite实战教程',
+  postAI: '',
+  pageFillDescription: 'Kali Live U 盘版 Wifite 实战教程 (AX210), 第一步：正确进入系统, 第二步：打开终端并检查网卡, 第三步：启动 Wifite (一键脚本), 第四步：扫描与选定目标, 第五步：自动攻击流程 (喝杯水的时间), 第六步：保存战果 (最重要！), 方法：保存到 Windows 硬盘, 第七步：回到 Windows 跑大字典, 常见问题故障排除, 另一个可能的原因：PMF (管理帧保护), 可能的失败原因, 1. WPS 攻击失效 (针对跑了半天的情况), 2. 握手包抓不到 (Handshake Capture Failed), 3. 抓到了包但破解失败 (Cracking Failed)盘版实战教程前言你现在是直接用盘启动的系统关于如何制作启动盘请看上一篇这意味着直接控制你的笔记本硬件网卡性能极强支持最新的监听模式和注入是绝佳的测试工具没有也可以手动查阅是否支持第一步正确进入系统启动选择在菜单选择后如果你配置了持久化选择如果你没配置不确定选择第一项注意如果选了第一项重启后文件会消失所以后面我会教你如何把抓到的包存回硬盘登录如果提示输入账号密码默认都是第二步打开终端并检查网卡打开终端点击左上角的黑底白色图标或者按下快捷键确认状态输入命令预期结果你应该能看到一行写着解释就是你的无线网卡如果不显示说明内核没认出网卡通常没问题除非版本太旧第三步启动一键脚本这是最关键的一步输入命令以管理员权限运行非常重要这会自动杀死后台的网络管理进程如果不加这个你的网卡会一会在监听模式一会被系统抢回去导致扫描失败扫描和所有信道输入密码如果提示输入并回车输入时屏幕上不会显示星号是正常的第四步扫描与选定目标启动后你会看到绿色的文字网卡灯可能会狂闪看懂扫描列表屏幕会不断刷新附近的列表编号等会儿选目标用名字信道加密方式通常是信号强度数值越接近越好比如比信号更强注意有些版本显示负数则绝对值越小越好这是重点显示当前连着这个的设备数量如果有客户端显示破解成功率极高可以通过踢人下线抓包如果显示只能尝试攻击成功率稍低锁定目标当你的目标自家出现且列不为时按下停止扫描输入编号终端会提示输入你家对应的数字例如按回车第五步自动攻击流程喝杯水的时间会自动对你选定的目标进行全套服务攻击如果路由开了尝试直接计算码如果成功密码直接秒出攻击针对这是新一代攻击不需要踢人下线它会尝试读取路由器的一个特殊数据包握手包攻击现象它会发送包此时你家里的手机电视会突然断网一瞬间目的设备自动重连时会抓取握手包成功提示你会看到一行醒目的文字名字第六步保存战果最重要抓到包后默认会尝试用自带的小字典跑一下如果密码很简单如它会直接显示红色文字你的密码如果密码复杂它会告诉你破解失败关键问题来了你是盘模式重启后文件就没了你必须把抓到的文件握手包转移到安全的地方方法保存到硬盘可以直接读取你电脑上的硬盘分区打开文件管理器桌面上蓝色的文件夹图标点击左侧的其他位置你会看到好几个硬盘图标如双击它们直到找到你里的盘或盘看里面的文件夹就能认出来找到握手包回到的目录点击左侧也就是那个房子图标进入文件夹里面那个文件就是你的战果复制粘贴把这个文件复制粘贴到你刚才打开的硬盘分区里比如盘根目录第七步回到跑大字典拔掉盘重启电脑回到系统去盘找到那个文件使用配合你的显卡进行暴力破解提示在上用需要把转换为格式可以用在线工具转换或者使用新版直接支持的格式或者简单点下载一个版的图形化工具如导入这个文件跑字典常见问题故障排除报错这说明没认出你的解决确保你下载的是最新版或旧版内核不支持扫描不到或者极低的天线问题有些笔记本在下驱动电源管理策略较激进尝试离路由器近一点一直抓不到握手包说明信号不好或者踢人失败确保此时有手机正在用这个刷视频产生流量这样踢下线重连时更容易抓包另一个可能的原因管理帧保护如果开启了扫描看到手机在线也在攻击但手机就是不断网或者提示那是另一个原因原因你家的路由器开启了安全功能这个功能会保护踢人包不被伪造导致无法把设备踢下线的提示在扫描列表里有些会标记解决这种情况下传统的踢人攻击无效只能寄希望于攻击自动会试或者等待设备自然重连碰运气可能的失败原因攻击失效针对跑了半天的情况如果你看到长时间卡在或者阶段防御机制锁定或彻底关闭现实现在的路由器小米华为等出厂默认要么关闭要么有防暴力破解功能只要你试错次码路由器就会直接锁死功能几小时甚至永久结论如果你的路由器是最近几年买的放弃攻击吧它是针对年前的老古董的握手包抓不到如果你开启了扫描看到有客户端也一直在发送踢人但手机就是不断网或者一直抓不到包防御机制管理帧保护现实这是一个让黑客非常头疼的功能原理以前我们可以伪造路由器发个滚蛋包把手机踢下线开启后这些管理包也被加密签名了你发的伪造包手机根本不理会很多路由器默认开启此功能结论如果踢不掉人就无法强制抓取握手包你只能等等家人回家手机自动连上的那一瞬间这可能需要蹲守很久抓到了包但破解失败如果最后提示抓到了文件但显示或没跑出密码防御机制强密码现实自带的字典非常小如果你家的密码是它能秒破如果你家的密码是或者跑到天荒地老也跑不出来结论这是最常见的情况工具没坏是你密码太强了这时候需要把你抓到的文件拿到上用跑几十个的大字典才有希望',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-01-23 19:32:36',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="/img/xiao.svg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://www.233909.xyz/" title="博客"><img class="back-menu-item-icon" src="/img/xiao.svg" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/Kur1oR3iko/Project-ESPNow" title="远程画板[贡献1.0.6版本]"><img class="back-menu-item-icon" src="https://s21.ax1x.com/2025/03/28/pEr2lWQ.webp" alt="远程画板[贡献1.0.6版本]"/><span class="back-menu-item-text">远程画板[贡献1.0.6版本]</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">233-909!</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/nav/"><i class="xiaohj-icon xiaohj-icon-compass faa-tada"></i><span> 导航</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="/null" target="_blank"><img class="post-qr-code-img" alt="微信" src="/null"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/null" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="/null"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 1.05rem;">C语言<sup>3</sup></a><a href="/tags/Java/" style="font-size: 1.05rem;">Java<sup>1</sup></a><a href="/tags/%E3%80%8A%E5%A4%A7%E6%98%8E%E5%AF%B0%E5%AE%87%E3%80%8B/" style="font-size: 1.05rem;">《大明寰宇》<sup>1</sup></a><a href="/tags/%E4%B8%8A%E6%B5%B7%E4%B8%93%E5%8D%87%E6%9C%AC/" style="font-size: 1.05rem;">上海专升本<sup>1</sup></a><a href="/tags/%E4%BA%94%E5%B9%B4%E4%B8%80%E8%B4%AF%E5%88%B6/" style="font-size: 1.05rem;">五年一贯制<sup>1</sup></a><a href="/tags/%E4%BA%A4%E6%B5%81/" style="font-size: 1.05rem;">交流<sup>1</sup></a><a href="/tags/%E4%BA%BA%E5%B7%A5%E6%92%B0%E5%86%99/" style="font-size: 1.05rem;">人工撰写<sup>2</sup></a><a href="/tags/%E5%8D%87%E5%AD%A6%E8%A7%84%E5%88%92/" style="font-size: 1.05rem;">升学规划<sup>1</sup></a><a href="/tags/%E5%90%90%E6%A7%BD/" style="font-size: 1.05rem;">吐槽<sup>4</sup></a><a href="/tags/%E5%93%B2%E5%AD%A6/" style="font-size: 1.05rem;">哲学<sup>1</sup></a><a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 1.05rem;">学习<sup>5</sup></a><a href="/tags/%E5%B0%8F%E8%AF%B4/" style="font-size: 1.05rem;">小说<sup>1</sup></a><a href="/tags/%E5%B7%A5%E4%B8%9A%E4%BA%92%E8%81%94%E7%BD%91/" style="font-size: 1.05rem;">工业互联网<sup>1</sup></a><a href="/tags/%E5%B9%95%E5%90%8E/" style="font-size: 1.05rem;">幕后<sup>1</sup></a><a href="/tags/%E5%B9%BD%E9%BB%98/" style="font-size: 1.05rem;">幽默<sup>2</sup></a><a href="/tags/%E6%84%9F%E6%83%B3/" style="font-size: 1.05rem;">感想<sup>1</sup></a><a href="/tags/%E6%9B%B4%E6%96%B0/" style="font-size: 1.05rem;">更新<sup>2</sup></a><a href="/tags/%E8%A7%86%E9%A2%91/" style="font-size: 1.05rem;">视频<sup>2</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A/" style="font-size: 1.05rem;">计算机专业<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2026/01/"><span class="card-archive-list-date">一月 2026</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/11/"><span class="card-archive-list-date">十一月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">6</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/09/"><span class="card-archive-list-date">九月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/07/"><span class="card-archive-list-date">七月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/05/"><span class="card-archive-list-date">五月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/04/"><span class="card-archive-list-date">四月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/03/"><span class="card-archive-list-date">三月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/02/"><span class="card-archive-list-date">二月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="anzhiyu.switchCommentBarrage()" title="热评开关"><a class="commentBarrage"><i class="anzhiyufont anzhiyu-icon-message"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="article-meta tags"></span></div></div><h1 class="post-title" itemprop="name headline">kail Live 使用Wifite实战教程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2026-01-23T11:25:59.000Z" title="发表于 2026-01-23 19:25:59">2026-01-23</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2026-01-23T11:32:36.815Z" title="更新于 2026-01-23 19:32:36">2026-01-23</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span id="" data-flag-title="kail Live 使用Wifite实战教程"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="twikoo_visitors" title="访问量"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为上海"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>上海</span><span class="post-meta-separator"></span><span class="post-meta-commentcount"><i class="anzhiyufont anzhiyu-icon-comments post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/posts/37442df9/#post-comment" tabindex="-1"><span id="twikoo-count"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></a></span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src=""></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="http://www.233909.xyz/posts/37442df9/"><header><h1 id="CrawlerTitle" itemprop="name headline">kail Live 使用Wifite实战教程</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">晓嘿君</span><time itemprop="dateCreated datePublished" datetime="2026-01-23T11:25:59.000Z" title="发表于 2026-01-23 19:25:59">2026-01-23</time><time itemprop="dateCreated datePublished" datetime="2026-01-23T11:32:36.815Z" title="更新于 2026-01-23 19:32:36">2026-01-23</time></header><h1 id="Kali-Live-U-盘版-Wifite-实战教程-AX210"><a href="#Kali-Live-U-盘版-Wifite-实战教程-AX210" class="headerlink" title="Kali Live U 盘版 Wifite 实战教程 (AX210)"></a>Kali Live U 盘版 Wifite 实战教程 (AX210)</h1><p><strong>前言</strong>： 你现在是直接用 U 盘启动的系统（关于如何制作启动盘请看上一篇）。这意味着 Kali 直接控制你的笔记本硬件。Intel AX210 网卡性能极强，支持最新的监听模式和注入，是绝佳的测试工具。没有 AX210 也可以手动查阅是否支持。</p>
+<h2 id="第一步：正确进入系统"><a href="#第一步：正确进入系统" class="headerlink" title="第一步：正确进入系统"></a>第一步：正确进入系统</h2><ol>
+<li><strong>启动选择</strong>：<ul>
+<li>在 Ventoy 菜单选择 Kali ISO 后。</li>
+<li><strong>如果你配置了持久化</strong>：选择 <code>Live system (persistence)</code>。</li>
+<li><strong>如果你没配置&#x2F;不确定</strong>：选择第一项 <code>Live system</code>。</li>
+<li><em>(注意：如果选了第一项，重启后文件会消失，所以后面我会教你如何把抓到的包存回 Windows 硬盘)</em></li>
+</ul>
+</li>
+<li><strong>登录</strong>：<ul>
+<li>如果提示输入账号密码，默认都是：<code>kali</code>。</li>
+</ul>
+</li>
+</ol>
+<h2 id="第二步：打开终端并检查网卡"><a href="#第二步：打开终端并检查网卡" class="headerlink" title="第二步：打开终端并检查网卡"></a>第二步：打开终端并检查网卡</h2><ol>
+<li><strong>打开终端</strong>：<ul>
+<li>点击左上角的 <strong>黑底白色 <code>_&gt;</code> 图标</strong>（Terminal Emulator）。</li>
+<li>或者按下快捷键 <code>Ctrl + Alt + T</code>。</li>
+</ul>
+</li>
+<li><strong>确认 AX210 状态</strong>：<ul>
+<li>输入命令：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">iwconfig</span><br></pre></td></tr></table></figure></li>
+<li><strong>预期结果</strong>：你应该能看到一行写着 <strong><code>wlan0</code></strong>。</li>
+<li><em>解释：wlan0 就是你的无线网卡。如果不显示，说明内核没认出网卡（AX210 通常没问题，除非 Kali 版本太旧）。</em></li>
+</ul>
+</li>
+</ol>
+<h2 id="第三步：启动-Wifite-一键脚本"><a href="#第三步：启动-Wifite-一键脚本" class="headerlink" title="第三步：启动 Wifite (一键脚本)"></a>第三步：启动 Wifite (一键脚本)</h2><p>这是最关键的一步。</p>
+<ol>
+<li><p><strong>输入命令</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo wifite --kill --all</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>sudo</code>：以管理员权限运行。</li>
+<li><code>--kill</code>：<strong>非常重要</strong>。这会自动杀死 Kali 后台的网络管理进程（NetworkManager）。如果不加这个，你的网卡会一会在监听模式，一会被系统抢回去，导致扫描失败。</li>
+<li><code>--all</code>: 扫描 2.4GHz 和 5GHz 所有信道。</li>
+</ul>
+</li>
+<li><p><strong>输入密码</strong>：</p>
+<ul>
+<li>如果提示 <code>[sudo] password for kali:</code>，输入 <code>kali</code> 并回车（输入时屏幕上不会显示星号，是正常的）。</li>
+</ul>
+</li>
+</ol>
+<h2 id="第四步：扫描与选定目标"><a href="#第四步：扫描与选定目标" class="headerlink" title="第四步：扫描与选定目标"></a>第四步：扫描与选定目标</h2><p>启动后，你会看到绿色的文字，网卡灯可能会狂闪。</p>
+<ol>
+<li><strong>看懂扫描列表</strong>： 屏幕会不断刷新附近的 Wi-Fi 列表：<ul>
+<li><strong>NUM</strong>: 编号（等会儿选目标用）。</li>
+<li><strong>ESSID</strong>: Wi-Fi 名字。</li>
+<li><strong>CH</strong>: 信道（Channel）。</li>
+<li><strong>ENCR</strong>: 加密方式（通常是 WPA2）。</li>
+<li><strong>POWER</strong>: 信号强度（<strong>数值越接近 0 越好</strong>，比如 <code>30db</code> 比 <code>10db</code> 信号更强。注意有些版本显示负数，则绝对值越小越好）。</li>
+<li><strong>CLIENTS</strong>: <strong>这是重点！</strong> 显示当前连着这个 Wi-Fi 的设备数量。<ul>
+<li>如果有客户端（显示 &gt;&#x3D; 1），破解成功率极高（可以通过踢人下线抓包）。</li>
+<li>如果显示 0，只能尝试 PMKID 攻击，成功率稍低。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>锁定目标</strong>：<ul>
+<li>当你的目标（自家 Wi-Fi）出现，且 <strong>CLIENTS</strong> 列不为 0 时。</li>
+<li>按下 <strong><code>Ctrl + C</code></strong> 停止扫描。</li>
+</ul>
+</li>
+<li><strong>输入编号</strong>：<ul>
+<li>终端会提示 <code>Enter TARGET NUM or ALL:</code>。</li>
+<li>输入你家 Wi-Fi 对应的数字（例如 <code>1</code>），按回车。</li>
+</ul>
+</li>
+</ol>
+<h2 id="第五步：自动攻击流程-喝杯水的时间"><a href="#第五步：自动攻击流程-喝杯水的时间" class="headerlink" title="第五步：自动攻击流程 (喝杯水的时间)"></a>第五步：自动攻击流程 (喝杯水的时间)</h2><p>Wifite 会自动对你选定的目标进行“全套服务”：</p>
+<ol>
+<li><strong>WPS PIN 攻击</strong>（如果路由开了 WPS）：<ul>
+<li>尝试直接计算 PIN 码。如果成功，密码直接秒出。</li>
+</ul>
+</li>
+<li><strong>PMKID 攻击</strong>（针对 WPA2&#x2F;WPA3）：<ul>
+<li>这是新一代攻击，不需要踢人下线。它会尝试读取路由器的一个特殊数据包。</li>
+</ul>
+</li>
+<li><strong>握手包攻击 (WPA Handshake)</strong>：<ul>
+<li><strong>现象</strong>：它会发送 Deauth 包。此时，<strong>你家里的手机、电视会突然断网一瞬间</strong>。</li>
+<li><strong>目的</strong>：设备自动重连时，Wifite 会抓取“握手包”。</li>
+<li><strong>成功提示</strong>：你会看到一行醒目的文字： <code>[+] WPA Handshake capture: hs/handshake_名字.cap</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="第六步：保存战果-最重要！"><a href="#第六步：保存战果-最重要！" class="headerlink" title="第六步：保存战果 (最重要！)"></a>第六步：保存战果 (最重要！)</h2><p>Wifite 抓到包后，默认会尝试用自带的小字典跑一下。</p>
+<ul>
+<li>如果密码很简单（如 <code>12345678</code>），它会直接显示红色文字：<strong>KEY FOUND! [ 你的密码 ]</strong>。</li>
+<li>如果密码复杂，它会告诉你破解失败。</li>
+</ul>
+<p><strong>关键问题来了</strong>：你是 Live U 盘模式，重启后文件就没了！你必须把抓到的 <strong><code>.cap</code> 文件</strong>（握手包）转移到安全的地方。</p>
+<h3 id="方法：保存到-Windows-硬盘"><a href="#方法：保存到-Windows-硬盘" class="headerlink" title="方法：保存到 Windows 硬盘"></a>方法：保存到 Windows 硬盘</h3><p>Kali 可以直接读取你电脑上的 Windows 硬盘分区。</p>
+<ol>
+<li><strong>打开文件管理器</strong>（桌面上蓝色的文件夹图标）。</li>
+<li>点击左侧的 <strong>“Other Locations”</strong> (其他位置)。</li>
+<li>你会看到好几个硬盘图标（如 512 GB Volume）。双击它们，直到找到你 Windows 里的 C 盘或 D 盘（看里面的文件夹就能认出来）。</li>
+<li><strong>找到握手包</strong>：<ul>
+<li>回到 Kali 的 Home 目录（点击左侧 <code>kali</code> 也就是那个房子图标）。</li>
+<li>进入 <code>hs</code> 文件夹。</li>
+<li>里面那个 <code>.cap</code> 文件就是你的战果。</li>
+</ul>
+</li>
+<li><strong>复制粘贴</strong>：<ul>
+<li>把这个 <code>.cap</code> 文件复制，粘贴到你刚才打开的 Windows 硬盘分区里（比如 D 盘根目录）。</li>
+</ul>
+</li>
+</ol>
+<h2 id="第七步：回到-Windows-跑大字典"><a href="#第七步：回到-Windows-跑大字典" class="headerlink" title="第七步：回到 Windows 跑大字典"></a>第七步：回到 Windows 跑大字典</h2><ol>
+<li>拔掉 U 盘，重启电脑，回到 Windows 系统。</li>
+<li>去 D 盘找到那个 <code>.cap</code> 文件。</li>
+<li>使用 <strong>Hashcat</strong> 配合你的显卡进行暴力破解。<ul>
+<li><em>提示：在 Windows 上用 Hashcat 需要把 .cap 转换为 .hccapx 格式（可以用在线工具转换），或者使用 Hashcat 新版直接支持的格式。</em></li>
+<li>或者简单点，下载一个 Windows 版的图形化工具（如 EWSA）导入这个 cap 文件跑字典。</li>
+</ul>
+</li>
+</ol>
+<h2 id="常见问题故障排除"><a href="#常见问题故障排除" class="headerlink" title="常见问题故障排除"></a>常见问题故障排除</h2><ul>
+<li><p><strong>报错：<code>No wireless interfaces found</code></strong></p>
+<ul>
+<li>这说明 Kali 没认出你的 AX210。</li>
+<li>解决：确保你下载的是<strong>最新版</strong> Kali (2024.x 或 2025.x)。旧版内核不支持 AX210。</li>
+</ul>
+</li>
+<li><p><strong>扫描不到 Wi-Fi，或者 Power 极低</strong></p>
+<ul>
+<li>AX210 的天线问题。有些笔记本在 Linux 下驱动电源管理策略较激进。</li>
+<li>尝试离路由器近一点。</li>
+</ul>
+</li>
+<li><p><strong>一直抓不到握手包</strong></p>
+<ul>
+<li>说明信号不好，或者“踢人”失败。</li>
+<li>确保此时有手机正在用这个 Wi-Fi 刷视频（产生流量），这样踢下线重连时更容易抓包。</li>
+</ul>
+<h3 id="另一个可能的原因：PMF-管理帧保护"><a href="#另一个可能的原因：PMF-管理帧保护" class="headerlink" title="另一个可能的原因：PMF (管理帧保护)"></a>另一个可能的原因：PMF (管理帧保护)</h3><p>如果开启了 5G 扫描，看到手机在线，Wifite 也在攻击，但手机就是<strong>不断网</strong>（或者 Wifite 提示 <code>PMF</code>），那是另一个原因：</p>
+<ul>
+<li><strong>原因</strong>：你家的路由器开启了 <strong>802.11w (PMF)</strong> 安全功能。这个功能会保护“踢人包”不被伪造，导致无法把设备踢下线。</li>
+<li><strong>Wifite 的提示</strong>：在扫描列表里，有些 Wi-Fi 会标记 <code>PMF</code>。</li>
+<li><strong>解决</strong>：这种情况下传统的踢人攻击无效。只能寄希望于 <strong>PMKID 攻击</strong>（Wifite 自动会试），或者等待设备自然重连（碰运气）。</li>
+</ul>
+</li>
+</ul>
+<h2 id="可能的失败原因"><a href="#可能的失败原因" class="headerlink" title="可能的失败原因"></a>可能的失败原因</h2><h3 id="1-WPS-攻击失效-针对“跑了半天”的情况"><a href="#1-WPS-攻击失效-针对“跑了半天”的情况" class="headerlink" title="1. WPS 攻击失效 (针对“跑了半天”的情况)"></a>1. WPS 攻击失效 (针对“跑了半天”的情况)</h3><p>如果你看到 Wifite 长时间卡在 <code>WPS Pixie-Dust</code> 或者 <code>Trying PIN...</code> 阶段：</p>
+<ul>
+<li><strong>防御机制</strong>：<strong>WPS Lock (锁定)</strong> 或 <strong>彻底关闭</strong>。</li>
+<li><strong>现实</strong>：现在的路由器（TP-Link, 小米, 华为等）出厂默认要么关闭 WPS，要么有“防暴力破解”功能。只要你试错 3-5 次 PIN 码，路由器就会直接“锁死” WPS 功能几小时甚至永久。</li>
+<li><strong>结论</strong>：如果你的路由器是最近几年买的，放弃 WPS 攻击吧，它是针对 10 年前的老古董的。</li>
+</ul>
+<h3 id="2-握手包抓不到-Handshake-Capture-Failed"><a href="#2-握手包抓不到-Handshake-Capture-Failed" class="headerlink" title="2. 握手包抓不到 (Handshake Capture Failed)"></a>2. 握手包抓不到 (Handshake Capture Failed)</h3><p>如果你开启了 5G 扫描，看到有客户端（Clients），Wifite 也一直在发送 Deauth（踢人），但手机就是不断网，或者一直抓不到包：</p>
+<ul>
+<li><strong>防御机制</strong>：<strong>PMF (802.11w 管理帧保护)</strong>。</li>
+<li><strong>现实</strong>：这是一个让黑客非常头疼的功能。<ul>
+<li><strong>原理</strong>：以前我们可以伪造路由器发个“滚蛋包”把手机踢下线。</li>
+<li><strong>PMF</strong>：开启后，这些管理包也被加密签名了。你发的伪造包，手机根本不理会。</li>
+<li>很多 Wi-Fi 6 路由器默认开启此功能。</li>
+</ul>
+</li>
+<li><strong>结论</strong>：如果踢不掉人，就无法强制抓取握手包。你只能等（等家人回家手机自动连上 Wi-Fi 的那一瞬间），这可能需要蹲守很久。</li>
+</ul>
+<h3 id="3-抓到了包，但破解失败-Cracking-Failed"><a href="#3-抓到了包，但破解失败-Cracking-Failed" class="headerlink" title="3. 抓到了包，但破解失败 (Cracking Failed)"></a>3. 抓到了包，但破解失败 (Cracking Failed)</h3><p>如果 Wifite 最后提示抓到了 <code>.cap</code> 文件，但显示 <code>FAILED</code> 或没跑出密码：</p>
+<ul>
+<li><strong>防御机制</strong>：<strong>强密码</strong>。</li>
+<li><strong>现实</strong>：Wifite 自带的字典非常小。<ul>
+<li>如果你家的密码是 <code>12345678</code>，它能秒破。</li>
+<li>如果你家的密码是 <code>Admin@1998</code> 或者 <code>Woshidashuaige.</code>，Wifite 跑到天荒地老也跑不出来。</li>
+</ul>
+</li>
+<li><strong>结论</strong>：<strong>这是最常见的情况</strong>。工具没坏，是你密码太强了。这时候需要把你抓到的 <code>.cap</code> 文件拿到 Windows 上用 <strong>Hashcat</strong> 跑几十个 G 的大字典才有希望。</li>
+</ul>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2025/09/05/68ba5cf5568da.png" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2025/09/05/68ba5cf5568da.png" title="头像" alt="头像"></a><div class="post-copyright__author_name">晓嘿君</div><div class="post-copyright__author_desc">星海横流，岁月成碑。</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="http://www.233909.xyz/posts/37442df9/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('http://www.233909.xyz/posts/37442df9/')">kail Live 使用Wifite实战教程</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://www.233909.xyz/posts/37442df9/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=kail Live 使用Wifite实战教程&amp;url=http://www.233909.xyz/posts/37442df9/&amp;pic=" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://www.233909.xyz" target="_blank">233-909!</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"></div></div></div><div class="post_share"><div class="social-share" data-image="https://bu.dusays.com/2025/09/05/68ba5cf5568da.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/posts/ac009643/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Ventoy实现U盘WePE和Kali双系统</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div><div class="comment-tips" id="comment-tips"><span>✅ 你无需删除空行，直接评论以获取最佳展示效果</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2025/09/05/68ba5cf5568da.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description">这里你可以看到一些杂七杂八的内容</div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">晓嘿君</h1><div class="author-info__desc">星海横流，岁月成碑。</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/xiaohj233" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/1869551601" target="_blank" title="BiliBili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div></div></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bullhorn anzhiyu-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到此网站</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Kali-Live-U-%E7%9B%98%E7%89%88-Wifite-%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B-AX210"><span class="toc-number">1.</span> <span class="toc-text">Kali Live U 盘版 Wifite 实战教程 (AX210)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E6%AD%A3%E7%A1%AE%E8%BF%9B%E5%85%A5%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.1.</span> <span class="toc-text">第一步：正确进入系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9A%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF%E5%B9%B6%E6%A3%80%E6%9F%A5%E7%BD%91%E5%8D%A1"><span class="toc-number">1.2.</span> <span class="toc-text">第二步：打开终端并检查网卡</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%9A%E5%90%AF%E5%8A%A8-Wifite-%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC"><span class="toc-number">1.3.</span> <span class="toc-text">第三步：启动 Wifite (一键脚本)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%EF%BC%9A%E6%89%AB%E6%8F%8F%E4%B8%8E%E9%80%89%E5%AE%9A%E7%9B%AE%E6%A0%87"><span class="toc-number">1.4.</span> <span class="toc-text">第四步：扫描与选定目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E6%AD%A5%EF%BC%9A%E8%87%AA%E5%8A%A8%E6%94%BB%E5%87%BB%E6%B5%81%E7%A8%8B-%E5%96%9D%E6%9D%AF%E6%B0%B4%E7%9A%84%E6%97%B6%E9%97%B4"><span class="toc-number">1.5.</span> <span class="toc-text">第五步：自动攻击流程 (喝杯水的时间)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E6%AD%A5%EF%BC%9A%E4%BF%9D%E5%AD%98%E6%88%98%E6%9E%9C-%E6%9C%80%E9%87%8D%E8%A6%81%EF%BC%81"><span class="toc-number">1.6.</span> <span class="toc-text">第六步：保存战果 (最重要！)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%EF%BC%9A%E4%BF%9D%E5%AD%98%E5%88%B0-Windows-%E7%A1%AC%E7%9B%98"><span class="toc-number">1.6.1.</span> <span class="toc-text">方法：保存到 Windows 硬盘</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E6%AD%A5%EF%BC%9A%E5%9B%9E%E5%88%B0-Windows-%E8%B7%91%E5%A4%A7%E5%AD%97%E5%85%B8"><span class="toc-number">1.7.</span> <span class="toc-text">第七步：回到 Windows 跑大字典</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4"><span class="toc-number">1.8.</span> <span class="toc-text">常见问题故障排除</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%8F%AF%E8%83%BD%E7%9A%84%E5%8E%9F%E5%9B%A0%EF%BC%9APMF-%E7%AE%A1%E7%90%86%E5%B8%A7%E4%BF%9D%E6%8A%A4"><span class="toc-number">1.8.1.</span> <span class="toc-text">另一个可能的原因：PMF (管理帧保护)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E8%83%BD%E7%9A%84%E5%A4%B1%E8%B4%A5%E5%8E%9F%E5%9B%A0"><span class="toc-number">1.9.</span> <span class="toc-text">可能的失败原因</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-WPS-%E6%94%BB%E5%87%BB%E5%A4%B1%E6%95%88-%E9%92%88%E5%AF%B9%E2%80%9C%E8%B7%91%E4%BA%86%E5%8D%8A%E5%A4%A9%E2%80%9D%E7%9A%84%E6%83%85%E5%86%B5"><span class="toc-number">1.9.1.</span> <span class="toc-text">1. WPS 攻击失效 (针对“跑了半天”的情况)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%8F%A1%E6%89%8B%E5%8C%85%E6%8A%93%E4%B8%8D%E5%88%B0-Handshake-Capture-Failed"><span class="toc-number">1.9.2.</span> <span class="toc-text">2. 握手包抓不到 (Handshake Capture Failed)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%8A%93%E5%88%B0%E4%BA%86%E5%8C%85%EF%BC%8C%E4%BD%86%E7%A0%B4%E8%A7%A3%E5%A4%B1%E8%B4%A5-Cracking-Failed"><span class="toc-number">1.9.3.</span> <span class="toc-text">3. 抓到了包，但破解失败 (Cracking Failed)</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/37442df9/" title="kail Live 使用Wifite实战教程">kail Live 使用Wifite实战教程</a><time datetime="2026-01-23T11:25:59.000Z" title="发表于 2026-01-23 19:25:59">2026-01-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/ac009643/" title="Ventoy实现U盘WePE和Kali双系统">Ventoy实现U盘WePE和Kali双系统</a><time datetime="2026-01-23T11:17:36.000Z" title="发表于 2026-01-23 19:17:36">2026-01-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/1c3bfe8a/" title="英语U1、2第九、十一大题详解"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2025/04/28/680f628873f0e.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="英语U1、2第九、十一大题详解"/></a><div class="content"><a class="title" href="/posts/1c3bfe8a/" title="英语U1、2第九、十一大题详解">英语U1、2第九、十一大题详解</a><time datetime="2025-11-13T08:06:14.000Z" title="发表于 2025-11-13 16:06:14">2025-11-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/7ec0dc64/" title="Python期中复习题-编程题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2025/04/28/680f628873f0e.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python期中复习题-编程题"/></a><div class="content"><a class="title" href="/posts/7ec0dc64/" title="Python期中复习题-编程题">Python期中复习题-编程题</a><time datetime="2025-11-12T11:04:20.566Z" title="发表于 2025-11-12 19:04:20">2025-11-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/9773523e/" title="网络基础模拟卷超详细精讲版"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2025/04/28/680f628873f0e.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="网络基础模拟卷超详细精讲版"/></a><div class="content"><a class="title" href="/posts/9773523e/" title="网络基础模拟卷超详细精讲版">网络基础模拟卷超详细精讲版</a><time datetime="2025-11-06T11:24:13.000Z" title="发表于 2025-11-06 19:24:13">2025-11-06</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="workboard"><div id="runtimeTextTip"></div></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v5.4.0" title="博客框架为Hexo_v5.4.0"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg" alt="博客框架为Hexo_v5.4.0"/></a><a class="github-badge" target="_blank" href="https://blog.anheyu.com/" style="margin-inline:5px" data-title="本站使用AnZhiYu主题" title="本站使用AnZhiYu主题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg" alt="本站使用AnZhiYu主题"/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title="本站项目由Github托管"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Source-Github.svg" alt="本站项目由Github托管"/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/Copyright-BY-NC-SA.svg" alt="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"/></a></p></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2025 - 2026 By <a class="footer-bar-link" href="/" title="晓嘿君" target="_blank">晓嘿君</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">21</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">4</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://www.233909.xyz/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/xiao.svg" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/Kur1oR3iko/Project-ESPNow" title="远程画板[贡献1.0.6版本]"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s21.ax1x.com/2025/03/28/pEr2lWQ.webp" alt="远程画板[贡献1.0.6版本]"/><span class="back-menu-item-text">远程画板[贡献1.0.6版本]</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/nav/"><i class="xiaohj-icon xiaohj-icon-compass faa-tada"></i><span> 导航</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 0.88rem;">C语言<sup>3</sup></a><a href="/tags/Java/" style="font-size: 0.88rem;">Java<sup>1</sup></a><a href="/tags/%E3%80%8A%E5%A4%A7%E6%98%8E%E5%AF%B0%E5%AE%87%E3%80%8B/" style="font-size: 0.88rem;">《大明寰宇》<sup>1</sup></a><a href="/tags/%E4%B8%8A%E6%B5%B7%E4%B8%93%E5%8D%87%E6%9C%AC/" style="font-size: 0.88rem;">上海专升本<sup>1</sup></a><a href="/tags/%E4%BA%94%E5%B9%B4%E4%B8%80%E8%B4%AF%E5%88%B6/" style="font-size: 0.88rem;">五年一贯制<sup>1</sup></a><a href="/tags/%E4%BA%A4%E6%B5%81/" style="font-size: 0.88rem;">交流<sup>1</sup></a><a href="/tags/%E4%BA%BA%E5%B7%A5%E6%92%B0%E5%86%99/" style="font-size: 0.88rem;">人工撰写<sup>2</sup></a><a href="/tags/%E5%8D%87%E5%AD%A6%E8%A7%84%E5%88%92/" style="font-size: 0.88rem;">升学规划<sup>1</sup></a><a href="/tags/%E5%90%90%E6%A7%BD/" style="font-size: 0.88rem;">吐槽<sup>4</sup></a><a href="/tags/%E5%93%B2%E5%AD%A6/" style="font-size: 0.88rem;">哲学<sup>1</sup></a><a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 0.88rem;">学习<sup>5</sup></a><a href="/tags/%E5%B0%8F%E8%AF%B4/" style="font-size: 0.88rem;">小说<sup>1</sup></a><a href="/tags/%E5%B7%A5%E4%B8%9A%E4%BA%92%E8%81%94%E7%BD%91/" style="font-size: 0.88rem;">工业互联网<sup>1</sup></a><a href="/tags/%E5%B9%95%E5%90%8E/" style="font-size: 0.88rem;">幕后<sup>1</sup></a><a href="/tags/%E5%B9%BD%E9%BB%98/" style="font-size: 0.88rem;">幽默<sup>2</sup></a><a href="/tags/%E6%84%9F%E6%83%B3/" style="font-size: 0.88rem;">感想<sup>1</sup></a><a href="/tags/%E6%9B%B4%E6%96%B0/" style="font-size: 0.88rem;">更新<sup>2</sup></a><a href="/tags/%E8%A7%86%E9%A2%91/" style="font-size: 0.88rem;">视频<sup>2</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A/" style="font-size: 0.88rem;">计算机专业<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="chat-btn" type="button" title="聊天"><i class="anzhiyufont anzhiyu-icon-comment-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><a id="switch-commentBarrage" href="javascript:anzhiyu.switchCommentBarrage();" title="开关弹幕"><i class="anzhiyufont anzhiyu-icon-danmu"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="2837369820" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://music.163.com/playlist?id=2837369820&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="https://cdn.cbd.int/hexo-theme-anzhiyu@1.6.14/source/js/utils.js"></script><script src="https://cdn.cbd.int/hexo-theme-anzhiyu@1.6.14/source/js/main.js"></script><script src="https://cdn.cbd.int/hexo-theme-anzhiyu@1.6.14/source/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("2025/02/15 17:51:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2025 By 安知鱼 V1.6.14",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 晓嘿君 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script async="async">(function () {
+  var grt = new Date("2025/02/15 17:51:00"); //设置网站上线时间
+  var now = new Date();
+  var dnum;
+  var hnum;
+  var mnum;
+  var snum;
+  var nowHour;
+
+  // 计算并更新天数、小时数、分钟数和秒数
+  function updateTime() {
+    now = new Date(); // 更新 now 的值
+    nowHour = now.getHours(); // 更新 nowHour 的值
+    var days = (now - grt) / 1000 / 60 / 60 / 24;
+    dnum = Math.floor(days);
+    var hours = (now - grt) / 1000 / 60 / 60 - 24 * dnum;
+    hnum = Math.floor(hours);
+    if (String(hnum).length == 1) {
+      hnum = "0" + hnum;
+    }
+    var minutes = (now - grt) / 1000 / 60 - 24 * 60 * dnum - 60 * hnum;
+    mnum = Math.floor(minutes);
+    if (String(mnum).length == 1) {
+      mnum = "0" + mnum;
+    }
+    var seconds = (now - grt) / 1000 - 24 * 60 * 60 * dnum - 60 * 60 * hnum - 60 * mnum;
+    snum = Math.round(seconds);
+    if (String(snum).length == 1) {
+      snum = "0" + snum;
+    }
+  }
+
+  // 更新网页中显示的网站运行时间
+  function updateHtml() {
+    const footer = document.getElementById("footer");
+    if (!footer) return
+    let currentTimeHtml = "";
+    if (nowHour < 18 && nowHour >= 9) {
+      // 如果是上班时间，默认就是"安知鱼-上班摸鱼中.svg"图片，不需要更改
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    } else {
+      // 如果是下班时间，插入"安知鱼-下班啦.svg"图片
+      let img = document.querySelector("#workboard .workSituationImg");
+      if (img != null) {
+        img.src = "";
+        img.title = "";
+        img.alt = "";
+      }
+
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    }
+
+    if (document.getElementById("runtimeTextTip")) {
+      document.getElementById("runtimeTextTip").innerHTML = currentTimeHtml;
+    }
+  }
+
+  setInterval(() => {
+    updateTime();
+    updateHtml();
+  }, 1000);
+})();</script><div class="js-pjax"><script>(() => {
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://www.review.233909.xyz/',
+      region: '',
+      onCommentLoaded: () => {
+        anzhiyu.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(runFn,0)
+    else getScript('https://cdn.cbd.int/twikoo@1.6.39/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://www.review.233909.xyz/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const runFn = () => {
+    init();
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else {
+      loadTwikoo()
+    }
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"><script async src="https://cdn.cbd.int/hexo-theme-anzhiyu@1.6.14/source/js/anzhiyu/comment_barrage.js"></script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://www.review.233909.xyz/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://cdn.cbd.int/twikoo@1.6.39/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'><div class='name'><span>${array[i].nick} </span></div></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><script>(() => {
+  const isChatBtn = true
+  const isChatHideShow = true
+
+  if (isChatBtn) {
+    const close = () => {
+      Chatra('minimizeWidget')
+      Chatra('hide')
+    }
+
+    const open = () => {
+      Chatra('openChat', true)
+      Chatra('show')
+    }
+
+    window.ChatraSetup = {
+      startHidden: true
+    }
+  
+    window.chatBtnFn = () => {
+      const isShow = document.getElementById('chatra').classList.contains('chatra--expanded')
+      isShow ? close() : open()
+    }
+  } else if (isChatHideShow) {
+    window.chatBtn = {
+      hide: () => {
+        Chatra('hide')
+      },
+      show: () => {
+        Chatra('show')
+      }
+    }
+  }
+
+  (function(d, w, c) {
+    w.ChatraID = 'hEtM84cukuuxHo8QB'
+    var s = d.createElement('script')
+    w[c] = w[c] || function() {
+        (w[c].q = w[c].q || []).push(arguments)
+    }
+    s.async = true
+    s.src = 'https://call.chatra.io/chatra.js'
+    if (d.head) d.head.appendChild(s)
+  })(document, window, 'Chatra')
+
+})()</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","meta[property=\"og:type\"]","meta[property=\"og:site_name\"]","meta[property=\"og:description\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
